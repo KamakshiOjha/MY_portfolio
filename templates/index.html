@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kamakshi Ojha — Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    gsap.fromTo(".bubble", 
+      { scale: 0, opacity: 0, y: 50 }, 
+      { scale: 1, opacity: 1, y: 0, stagger: 0.1, duration: 0.6, ease: "back.out(1.7)" }
+    );
+  });
+</script>
+
+<body class="antialiased bg-gradient-to-b from-white via-slate-50 to-slate-100 text-slate-900">
+  <header class="sticky top-0 bg-white/70 backdrop-blur z-40">
+    <div class="max-w-5xl mx-auto flex items-center justify-between p-4">
+      <a class="text-2xl font-extrabold" href="#top">Kamakshi<span class="text-indigo-600">.</span></a>
+      <div class="hidden md:flex gap-6 text-slate-700">
+        <a href="#projects" class="hover:text-indigo-600">Projects</a>
+        <a href="#experience" class="hover:text-indigo-600">Experience</a>
+        <a href="#contact" class="hover:text-indigo-600">Contact</a>
+      </div>
+      <a href="mailto:kkamakshiojha@gmail.com" class="px-3 py-2 border rounded-full text-sm">Email</a>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-6">
+    <section class="grid md:grid-cols-12 gap-8 items-center py-12">
+      <div class="md:col-span-7">
+        <h1 class="text-4xl md:text-5xl font-extrabold">Hi, I'm <span class="text-indigo-600">Kamakshi</span></h1>
+        <p class="mt-4 text-lg text-slate-700">AI/ML engineer working on LLMs, CV and quantum ML — I build models and full-stack demos.</p>
+        <div class="mt-6 flex gap-3">
+          <a class="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow" href="#projects">See Projects</a>
+          <a class="px-4 py-2 border rounded-lg" href="{{ url_for('static', filename='/assets/Resume_copy.pdf') }}" download>Download Résumé</a>
+        </div>
+      </div>
+      <div class="md:col-span-5">
+        <div class="p-6 bg-white rounded-2xl shadow width-full">
+          <h3 class="font-bold">Quick facts</h3>
+          <ul class="mt-3 text-slate-700">
+            <li>📍 Delhi, India</li>
+            <li>🎓 B.Tech CSE @ Amity University - 8.92</li>
+            <li>💌 <a class="underline" href="mailto:kkamakshiojha@gmail.com">kkamakshiojha@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="py-10">
+      <h2 class="text-3xl font-extrabold">Tech Creations</h2>
+      <div class="mt-6 grid grid-cols-1 gap-6">
+        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition space-y-4">
+          <h3 class="font-bold">TERRASNAP</h3>
+          <p class="mt-2 text-slate-700">Developed an end-to-end terrain classification system using Convolutional Neural Networks (CNN) to identify four terrain types - Grassy, Marshy, Rocky, and Sandy from user uploaded images. Built a responsive Flask-based web interface allowing on-demand predictions, trained on a Kaggle dataset of 28,446 images resized to (224×224×3), with separate train, validation, and test splits. Achieved 97% test accuracy, with balanced macro and weighted averages, and deployed interactive tools for real-time insights
+via confusion matrix and classification report visualization.</p>
+            <a href="https://github.com/KamakshiOjha/Terrain_Recognition" 
+              target="_blank" 
+              class="bg-indigo-600 text-white rounded-lg px-4 py-2 text-sm inline-block">
+              View on GitHub
+            </a>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition space-y-4">
+          <h3 class="font-bold">NEURONAP</h3>
+          <p class="mt-2 text-slate-700">Developed a deep learning model for EEG-based drowsiness detection using a Convolutional Neural Network (CNN) enhanced with CBAM (Convolutional Block Attention Module) to improve spatial attention and signal focus.Preprocessed raw EEG data and extracted relevant features, which were flattened and passed through dense layers with softmax activation for multi-class drowsiness classification. Achieved 74% classification accuracy, offering a promising approach for real-time alertness monitoring in driver safety and
+cognitive fatigue applications.</p>
+           <a href="https://github.com/KamakshiOjha/Convolutional-Neural-Network-for-Drowsiness-Detection-from-EEG-signals" 
+              target="_blank" 
+              class="bg-indigo-600 text-white rounded-lg px-4 py-2 text-sm inline-block">
+              View on GitHub
+            </a>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition space-y-4">
+          <h3 class="font-bold">BOOKCOVE</h3>
+          <p class="mt-2 text-slate-700">The platform features a wide range of bestsellers and categorized books, along with literary events, clubs, reviews, wishlists, and cart management, making it a complete hub for book lovers. It also includes a dedicated 'Local Treasures' section that supports small businesses and emerging authors, giving readers the chance to discover unique voices and hidden gems. With an engaging interface and community-driven features, it creates a vibrant space for readers to explore, connect, and share their love for literature.</p>
+            <a href="https://bookcove.vercel.app/" 
+              target="_blank" 
+              class="bg-indigo-600 text-white rounded-lg px-4 py-2 text-sm inline-block">
+              View Website
+            </a>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition space-y-4">
+          <h3 class="font-bold">QUANTALUX</h3>
+          <p class="mt-2 text-slate-700">Developed a hybrid CycleGAN-Quantum model to enhance scalability and speed in image-to-image translation. The model was used to convert night light images to Daylight, helping to enhance visual information, surveillance, and remote sensing.</p>
+            <a href="https://github.com/KamakshiOjha/Image-to-Image-Generation-Day-to-Night-" 
+              target="_blank" 
+              class="bg-indigo-600 text-white rounded-lg px-4 py-2 text-sm inline-block">
+              View on GitHub
+            </a>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+          <h3 class="font-bold">CHAT ROOM APPLICATION</h3>
+          <p class="mt-2 text-slate-700">I developed a chat room application using Spring Boot, WebSocket, and STOMP to enable seamless real-time communication. By establishing persistent WebSocket connections, the app supports instant messaging with minimal latency. Additionally, I optimized the system’s performance and enhanced scalability by 5% through the efficient use of STOMP for message-based communication.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="py-10">
+      <h2 class="text-3xl font-extrabold">Experience</h2>
+      <div class="mt-6 space-y-4">
+        <div class="p-6 bg-white rounded-2xl shadow space-y-4">
+          <h3 class="font-bold">Tech Mahindra — AI (LLM) Intern & Quantum Computing Intern</h3>
+          <p class="text-sm text-slate-500">May 2024 – Jul 2024</p>
+          <ul class="mt-3 list-disc list-inside text-slate-700">
+            <li>Curated and preprocessed multilingual datasets from Indonesian sources for the Garuda Project, improving data quality and LLM
+training readiness.</li>
+            <li>Explored Attention-based Spiking Graph Networks (ASGN) and Spiking Neural Networks (SNNs), proposing an attention-
+integrated framework to enhance contextual relevance in LLMs.</li>
+            <li>Designed and implemented QUANTALUX - a hybrid CycleGAN Quantum model for night-to-day image translation, enabling visual
+enhancement for surveillance and remote sensing.</li>
+          </ul>
+          <a href="https://drive.google.com/file/d/1efpdgNeW2WoSj2NmT-HItoEJNxVAjJ_L/view?usp=sharing" 
+              target="_blank" 
+              class="bg-indigo-600 text-white rounded-lg px-4 py-2 text-sm inline-block">
+              Completion Certificate
+            </a>
+
+        </div>
+
+        <div class="p-6 bg-white rounded-2xl shadow space-y-4">
+          <h3 class="font-bold">Open Health Systems Laboratory (OHSL) — Research Intern</h3>
+          <p class="text-sm text-slate-500">May 2024 – Jul 2024</p>
+          <ul class="mt-3 list-disc list-inside text-slate-700">
+            <li>Explored integration of Zoom, Microsoft Teams, WebEx, and Google Meet with TELESYNERGY®
+, a telemedicine platform developed by NIH, focusing on system-level compatibility and HIPAA compliance.</li>
+            <li>Conducted technical evaluations on latency, security, scalability, and usability across platforms; recommended Zoom as the
+optimal solution based on superior encryption, stability, and healthcare readiness.</li>
+            <li>Proposed cross-platform interoperability strategies to support seamless virtual consultations, enhancing TELESYNERGY’s
+scalability across global medical institutions.</li>
+          </ul>
+          <a href="https://drive.google.com/file/d/1ya9OI5ZwRMlesGE6k4DZdyxD8S9kMski/view?usp=sharing" 
+              target="_blank" 
+              class="bg-indigo-600 text-white rounded-lg px-4 py-2 text-sm inline-block">
+              Completion Certificate
+            </a>
+
+        </div>
+      </div>
+    </section>
+    <section class="py-10">
+  <h2 class="text-center text-3xl font-extrabold mb-8">⚡ Skills & Expertise</h2>
+  <div class="flex flex-wrap justify-center gap-3">
+    <span class="bubble px-4 py-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 text-white shadow-lg">C</span>
+    <span class="bubble px-4 py-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 text-white shadow-lg">C++</span>
+    <span class="bubble px-4 py-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 text-white shadow-lg">Java</span>
+    <span class="bubble px-4 py-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 text-white shadow-lg">Python3</span>
+    <span class="bubble px-4 py-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 text-white shadow-lg">SQL</span>
+    <span class="bubble px-4 py-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 text-white shadow-lg">TensorFlow</span>
+    <span class="bubble px-4 py-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 text-white shadow-lg">PyTorch</span>
+    <span class="bubble px-4 py-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 text-white shadow-lg">React</span>
+    <span class="bubble px-4 py-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 text-white shadow-lg">Git/GitHub</span>
+  </div>
+</section>
+
+
+    <!-- Coursework -->
+    <section class="py-10 bg-slate-50">
+    <h2 class="text-center text-3xl font-extrabold mb-8">Coursework</h2>
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="bubble px-4 py-2 rounded-full bg-gradient-to-r from-indigo-400 to-pink-500 text-white shadow-lg">Data Structures</span>
+      <span class="bubble px-4 py-2 rounded-full bg-gradient-to-r from-indigo-400 to-pink-500 text-white shadow-lg">DBMS</span>
+      <span class="bubble px-4 py-2 rounded-full bg-gradient-to-r from-indigo-400 to-pink-500 text-white shadow-lg">Machine Learning</span>
+      <span class="bubble px-4 py-2 rounded-full bg-gradient-to-r from-indigo-400 to-pink-500 text-white shadow-lg">Deep Learning</span>
+      <span class="bubble px-4 py-2 rounded-full bg-gradient-to-r from-indigo-400 to-pink-500 text-white shadow-lg">Generative AI</span>
+      <span class="bubble px-4 py-2 rounded-full bg-gradient-to-r from-indigo-400 to-pink-500 text-white shadow-lg">Computer Networks</span>
+      <span class="bubble px-4 py-2 rounded-full bg-gradient-to-r from-indigo-400 to-pink-500 text-white shadow-lg">Operating System</span>
+      <span class="bubble px-4 py-2 rounded-full bg-gradient-to-r from-indigo-400 to-pink-500 text-white shadow-lg">Software Engineering</span>
+      <span class="bubble px-4 py-2 rounded-full bg-gradient-to-r from-indigo-400 to-pink-500 text-white shadow-lg">Drone Technology</span>
+    </div>
+  </section>
+
+
+    <!-- Extracurricular -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Extracurricular</h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card shadow-sm p-3 rounded-3">
+              <h5 class="card-title">Open Source</h5>
+              <p class="card-text">Hacktoberfest, Girlscript Summer of Code, Social Summer of Code</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card shadow-sm p-3 rounded-3">
+              <h5 class="card-title">Clubs</h5>
+              <p class="card-text">IET Club, Deep Learning Student Chapter, IEEE Amity Student Chapter</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5">Certifications</h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card shadow-sm p-3 rounded-3">
+              <h5 class="card-title">CISCO</h5>
+              <p class="card-text">CCNA: Introduction to Networks, Python Essential I & II</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card shadow-sm p-3 rounded-3">
+              <h5 class="card-title">Coursera</h5>
+              <p class="card-text">Supervised ML, TensorFlow for AI/ML/DL, Data Foundations, Introduction to NLP</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="contact" class="py-10">
+      <div class="p-6 bg-white rounded-2xl shadow">
+        <h2 class="text-2xl font-bold">Contact</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="mt-4 space-y-2">
+              {% for category, msg in messages %}
+                <div class="p-3 rounded-md {% if category=='success' %}bg-green-50 border border-green-200{% else %}bg-red-50 border border-red-200{% endif %}">{{ msg }}</div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+        <form action="{{ url_for('contact') }}" method="post" class="mt-6 grid md:grid-cols-2 gap-4">
+          <input name="name" required placeholder="Your name" class="border rounded-xl p-3" />
+          <input name="email" required type="email" placeholder="Your email" class="border rounded-xl p-3" />
+          <input name="company" placeholder="Company (optional)" class="border rounded-xl p-3 md:col-span-2" />
+          <textarea name="message" required placeholder="Your message" rows="5" class="border rounded-xl p-3 md:col-span-2"></textarea>
+          <button class="bg-indigo-600 text-white rounded-xl p-3 md:col-span-2" type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="py-8 text-center text-sm text-slate-500">© {{ now.year }} Kamakshi Ojha</footer>
+  </main>
+</body>
+</html>
